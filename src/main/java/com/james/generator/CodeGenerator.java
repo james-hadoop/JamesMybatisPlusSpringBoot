@@ -1,30 +1,23 @@
 package com.james.generator;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
-import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
-import com.baomidou.mybatisplus.generator.config.FileOutConfig;
-import com.baomidou.mybatisplus.generator.config.GlobalConfig;
-import com.baomidou.mybatisplus.generator.config.PackageConfig;
-import com.baomidou.mybatisplus.generator.config.StrategyConfig;
-import com.baomidou.mybatisplus.generator.config.TemplateConfig;
+import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
-public class CodeGenerator {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
+public class CodeGenerator {
     /**
-     * <p>
-     * 读取控制台内容
-     * </p>
+     * @param tip
+     * @return
      */
     public static String scanner(String tip) {
         Scanner scanner = new Scanner(System.in);
@@ -45,27 +38,27 @@ public class CodeGenerator {
         AutoGenerator mpg = new AutoGenerator();
 
         // 全局配置
-        GlobalConfig gc = new GlobalConfig();
+        GlobalConfig globalConfig = new GlobalConfig();
         String projectPath = System.getProperty("JamesMybatisPlusSpringBoot");
-        gc.setOutputDir(projectPath + "/src/main/java");
-        gc.setAuthor("james");
-        gc.setOpen(false);
-        // gc.setSwagger2(true); 实体属性 Swagger2 注解
-        mpg.setGlobalConfig(gc);
+        globalConfig.setOutputDir(projectPath + "/src/main/java");
+        globalConfig.setAuthor("james");
+        globalConfig.setOpen(false);
+        globalConfig.setSwagger2(true);
+        mpg.setGlobalConfig(globalConfig);
 
         // 数据源配置
-        DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/developer?useUnicode=true&useSSL=false&characterEncoding=utf8");
-        // dsc.setSchemaName("public");
-        dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("developer");
-        dsc.setPassword("developer");
-        mpg.setDataSource(dsc);
+        DataSourceConfig dataSourceConfig = new DataSourceConfig();
+        dataSourceConfig.setUrl("jdbc:mysql://localhost:3306/developer?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        // dataSourceConfig.setSchemaName("public");
+        dataSourceConfig.setDriverName("com.mysql.cj.jdbc.Driver");
+        dataSourceConfig.setUsername("developer");
+        dataSourceConfig.setPassword("developer");
+        mpg.setDataSource(dataSourceConfig);
 
         // 包配置
         PackageConfig pc = new PackageConfig();
 //        pc.setModuleName(scanner("模块名"));
-        pc.setModuleName("com/james/mpsb/MybatisPlusSample");
+        pc.setModuleName("sample");
         pc.setParent("com.james.mpsb");
         mpg.setPackageInfo(pc);
 
@@ -123,19 +116,18 @@ public class CodeGenerator {
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
 //        strategy.setSuperEntityClass("你自己的父类实体,没有就不用设置!");
-        strategy.setEntityLombokModel(true);
+        strategy.setEntityLombokModel(false);
         strategy.setRestControllerStyle(true);
         // 公共父类
 //        strategy.setSuperControllerClass("你自己的父类控制器,没有就不用设置!");
         // 写于父类中的公共字段
         strategy.setSuperEntityColumns("id");
 //        strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
-        strategy.setInclude("yqc_spider_shanghai");
+        strategy.setInclude("t_ds_user");
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_");
         mpg.setStrategy(strategy);
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();
     }
-
 }

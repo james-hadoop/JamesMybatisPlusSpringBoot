@@ -1,4 +1,4 @@
-package com.james.mpsb.MybatisPlusSample.config;
+package com.james.mpsb.sample.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
