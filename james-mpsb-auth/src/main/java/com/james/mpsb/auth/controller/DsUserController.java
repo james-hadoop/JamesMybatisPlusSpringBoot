@@ -37,8 +37,6 @@ public class DsUserController {
     public Resp<PageVo> list(QueryCondition queryCondition) {
         PageVo page = userService.queryPage(queryCondition);
 
-        System.out.println(page);
-
         return Resp.ok(page);
     }
 }

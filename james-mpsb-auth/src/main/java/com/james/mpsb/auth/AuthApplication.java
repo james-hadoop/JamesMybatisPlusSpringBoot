@@ -11,7 +11,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * Created by James on 22-5-27 下午11:53
  */
 @SpringBootApplication
-//@EnableSwagger2
+@EnableFeignClients
+@EnableSwagger2
 @MapperScan("com.james.mpsb.auth.mapper")
 public class AuthApplication {
     public static void main(String[] args) {
