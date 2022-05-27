@@ -5,5 +5,5 @@
 /uploadDir/
 .idea/
 .attach*
-.idea/*
-/.idea/*
+.idea/
+/.idea/
