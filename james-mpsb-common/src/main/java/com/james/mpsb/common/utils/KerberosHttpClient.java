@@ -17,7 +17,7 @@
 
 package com.james.mpsb.common.utils;
 
-import org.apache.dolphinscheduler.common.Constants;
+import com.james.mpsb.common.Constants;
 import org.apache.http.auth.AuthSchemeProvider;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.Credentials;

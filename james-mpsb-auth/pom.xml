@@ -24,7 +24,7 @@
     <dependency>
       <groupId>com.james.mpsb</groupId>
       <artifactId>james-mpsb-common</artifactId>
-      <version>${project.version}</version>
+      <version>1.0</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -50,6 +50,12 @@
       <artifactId>guava</artifactId>
       <version>29.0-jre</version>
     </dependency>
+    <dependency>
+      <groupId>com.zaxxer</groupId>
+      <artifactId>HikariCP</artifactId>
+      <version>5.0.1</version>
+    </dependency>
+
   </dependencies>
 
   <build>

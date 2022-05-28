@@ -15,20 +15,19 @@
  * limitations under the License.
  */
 
-package com.james.mpsb.auth.security.impl.pwd;
+package com.james.mpsb.common.enums;
+
+/**
+ * depend result
+ */
+public enum DependResult {
 
 
-import com.james.mpsb.auth.entity.User;
-import com.james.mpsb.auth.security.impl.AbstractAuthenticator;
-import com.james.mpsb.auth.service.IUserService;
-import org.springframework.beans.factory.annotation.Autowired;
-
-public class PasswordAuthenticator extends AbstractAuthenticator {
-    @Autowired
-    private IUserService userService;
-
-    @Override
-    public User login(String userId, String password, String extra) {
-        return userService.queryUser(userId, password);
-    }
+    /**
+     * 0 success
+     * 1 waiting
+     * 2 failed
+     * 3 non execution
+     */
+    SUCCESS, WAITING, FAILED, NON_EXEC
 }

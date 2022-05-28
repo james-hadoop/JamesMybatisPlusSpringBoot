@@ -5,6 +5,9 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.util.Date;
+
+import com.james.mpsb.auth.enums.UserType;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -23,7 +26,7 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("t_ds_user")
-@ApiModel(value="DsUser对象", description="")
+@ApiModel(value="User对象", description="")
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -39,7 +42,7 @@ public class User implements Serializable {
     private String userPassword;
 
     @ApiModelProperty(value = "user type, 0:administrator，1:ordinary user")
-    private Integer userType;
+    private UserType userType;
 
     @ApiModelProperty(value = "email")
     private String email;
@@ -51,10 +54,10 @@ public class User implements Serializable {
     private Integer tenantId;
 
     @ApiModelProperty(value = "create time")
-    private LocalDateTime createTime;
+    private Date createTime;
 
     @ApiModelProperty(value = "update time")
-    private LocalDateTime updateTime;
+    private Date updateTime;
 
     @ApiModelProperty(value = "queue")
     private String queue;
@@ -65,5 +68,8 @@ public class User implements Serializable {
     @ApiModelProperty(value = "time zone")
     private String timeZone;
 
+    public UserType getUserType() {
+        return userType;
+    }
 
 }

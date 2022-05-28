@@ -15,20 +15,16 @@
  * limitations under the License.
  */
 
-package com.james.mpsb.auth.security.impl.pwd;
+package com.james.mpsb.common.thread;
 
+/**
+ * thread local context
+ */
+public class ThreadLocalContext {
 
-import com.james.mpsb.auth.entity.User;
-import com.james.mpsb.auth.security.impl.AbstractAuthenticator;
-import com.james.mpsb.auth.service.IUserService;
-import org.springframework.beans.factory.annotation.Autowired;
+    public static final ThreadLocal<String> timezoneThreadLocal = new ThreadLocal<>();
 
-public class PasswordAuthenticator extends AbstractAuthenticator {
-    @Autowired
-    private IUserService userService;
-
-    @Override
-    public User login(String userId, String password, String extra) {
-        return userService.queryUser(userId, password);
+    public static ThreadLocal<String> getTimezoneThreadLocal() {
+        return timezoneThreadLocal;
     }
 }

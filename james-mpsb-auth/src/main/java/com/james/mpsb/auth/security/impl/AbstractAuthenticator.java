@@ -17,9 +17,13 @@
 
 package com.james.mpsb.auth.security.impl;
 
+import com.james.mpsb.auth.entity.Session;
 import com.james.mpsb.auth.entity.User;
+import com.james.mpsb.auth.enums.Flag;
 import com.james.mpsb.auth.security.Authenticator;
-import com.james.mpsb.auth.service.IDsUserService;
+import com.james.mpsb.auth.service.ISessionService;
+import com.james.mpsb.auth.service.IUserService;
+import com.james.mpsb.common.Constants;
 import com.james.mpsb.common.entity.Result;
 import com.james.mpsb.common.enums.Status;
 import org.slf4j.Logger;
@@ -34,16 +38,16 @@ public abstract class AbstractAuthenticator implements Authenticator {
     private static final Logger logger = LoggerFactory.getLogger(AbstractAuthenticator.class);
 
     @Autowired
-    private IDsUserService userService;
+    private IUserService userService;
     @Autowired
-    private SessionService sessionService;
+    private ISessionService sessionService;
 
     /**
      * user login and return user in db
      *
-     * @param userId user identity field
+     * @param userId   user identity field
      * @param password user login password
-     * @param extra extra user login field
+     * @param extra    extra user login field
      * @return user object in databse
      */
     public abstract User login(String userId, String password, String extra);

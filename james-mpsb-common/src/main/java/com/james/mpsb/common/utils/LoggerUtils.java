@@ -17,8 +17,8 @@
 
 package com.james.mpsb.common.utils;
 
-import org.apache.dolphinscheduler.common.Constants;
-import org.apache.dolphinscheduler.plugin.task.api.TaskConstants;
+import com.james.mpsb.common.Constants;
+import com.james.mpsb.common.entity.TaskConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

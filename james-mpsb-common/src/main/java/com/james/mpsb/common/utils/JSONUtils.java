@@ -26,8 +26,8 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.databind.node.TextNode;
 import com.fasterxml.jackson.databind.type.CollectionType;
-import org.apache.dolphinscheduler.common.Constants;
-import org.apache.dolphinscheduler.spi.utils.StringUtils;
+import com.james.mpsb.common.Constants;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

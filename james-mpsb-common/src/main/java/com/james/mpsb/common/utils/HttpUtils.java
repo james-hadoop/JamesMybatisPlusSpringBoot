@@ -17,7 +17,7 @@
 
 package com.james.mpsb.common.utils;
 
-import org.apache.dolphinscheduler.common.Constants;
+import com.james.mpsb.common.Constants;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.config.AuthSchemes;
 import org.apache.http.client.config.CookieSpecs;

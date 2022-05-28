@@ -15,20 +15,35 @@
  * limitations under the License.
  */
 
-package com.james.mpsb.auth.security.impl.pwd;
+package com.james.mpsb.auth.enums;
 
+import com.baomidou.mybatisplus.annotation.EnumValue;
 
-import com.james.mpsb.auth.entity.User;
-import com.james.mpsb.auth.security.impl.AbstractAuthenticator;
-import com.james.mpsb.auth.service.IUserService;
-import org.springframework.beans.factory.annotation.Autowired;
+/**
+ * user type
+ */
+public enum UserType {
+    /**
+     * 0 admin user; 1 general user
+     */
+    ADMIN_USER(0, "admin user"),
+    GENERAL_USER(1, "general user");
 
-public class PasswordAuthenticator extends AbstractAuthenticator {
-    @Autowired
-    private IUserService userService;
+    UserType(int code, String descp) {
+        this.code = code;
+        this.descp = descp;
+    }
 
-    @Override
-    public User login(String userId, String password, String extra) {
-        return userService.queryUser(userId, password);
+    @EnumValue
+    private final int code;
+    private final String descp;
+
+    public int getCode() {
+        return code;
+    }
+
+    public String getDescp() {
+        return descp;
     }
 }
+

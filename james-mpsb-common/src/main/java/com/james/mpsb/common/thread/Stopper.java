@@ -15,20 +15,26 @@
  * limitations under the License.
  */
 
-package com.james.mpsb.auth.security.impl.pwd;
+package com.james.mpsb.common.thread;
 
+import java.util.concurrent.atomic.AtomicBoolean;
 
-import com.james.mpsb.auth.entity.User;
-import com.james.mpsb.auth.security.impl.AbstractAuthenticator;
-import com.james.mpsb.auth.service.IUserService;
-import org.springframework.beans.factory.annotation.Autowired;
+/**
+ *  if the process closes, a signal is placed as true, and all threads get this flag to stop working
+ */
+public class Stopper {
 
-public class PasswordAuthenticator extends AbstractAuthenticator {
-    @Autowired
-    private IUserService userService;
+    private static AtomicBoolean signal = new AtomicBoolean(false);
 
-    @Override
-    public User login(String userId, String password, String extra) {
-        return userService.queryUser(userId, password);
+    public static final boolean isStopped() {
+        return signal.get();
+    }
+
+    public static final boolean isRunning() {
+        return !signal.get();
+    }
+
+    public static final void stop() {
+        signal.set(true);
     }
 }

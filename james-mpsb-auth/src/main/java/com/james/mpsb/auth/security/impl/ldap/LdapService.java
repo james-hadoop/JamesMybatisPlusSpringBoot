@@ -17,7 +17,7 @@
 
 package com.james.mpsb.auth.security.impl.ldap;
 
-import org.apache.dolphinscheduler.common.enums.UserType;
+import com.james.mpsb.auth.enums.UserType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

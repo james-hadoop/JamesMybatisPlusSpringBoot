@@ -18,12 +18,12 @@
 package com.james.mpsb.common.utils;
 
 import org.apache.commons.lang.StringUtils;
-import org.apache.dolphinscheduler.common.Constants;
-import org.apache.dolphinscheduler.common.enums.CommandType;
-import org.apache.dolphinscheduler.common.utils.placeholder.BusinessTimeUtils;
-import org.apache.dolphinscheduler.common.utils.placeholder.PlaceholderUtils;
-import org.apache.dolphinscheduler.common.utils.placeholder.TimePlaceholderUtils;
-import org.apache.dolphinscheduler.plugin.task.api.model.Property;
+import com.james.mpsb.common.Constants;
+import com.james.mpsb.common.enums.CommandType;
+import com.james.mpsb.common.utils.placeholder.BusinessTimeUtils;
+import com.james.mpsb.common.utils.placeholder.PlaceholderUtils;
+import com.james.mpsb.common.utils.placeholder.TimePlaceholderUtils;
+import com.james.mpsb.common.entity.Property;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -143,7 +143,7 @@ public class ParameterUtils {
      *
      * @param paramsMap params map
      * @return Map of converted
-     * see org.apache.dolphinscheduler.server.utils.ParamUtils.convert
+     * see com.james.mpsb.server.utils.ParamUtils.convert
      */
     public static Map<String, String> convert(Map<String, Property> paramsMap) {
         Map<String, String> map = new HashMap<>();

@@ -17,14 +17,15 @@
 
 package com.james.mpsb.auth.security.impl.ldap;
 
-import org.apache.dolphinscheduler.api.security.impl.AbstractAuthenticator;
-import org.apache.dolphinscheduler.api.service.UsersService;
-import org.apache.dolphinscheduler.dao.entity.User;
+
+import com.james.mpsb.auth.entity.User;
+import com.james.mpsb.auth.security.impl.AbstractAuthenticator;
+import com.james.mpsb.auth.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class LdapAuthenticator extends AbstractAuthenticator {
     @Autowired
-    private UsersService usersService;
+    private IUserService usersService;
     @Autowired
     LdapService ldapService;
 

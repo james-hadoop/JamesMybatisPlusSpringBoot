@@ -18,8 +18,8 @@
 package com.james.mpsb.common.utils;
 
 import org.apache.commons.lang.StringUtils;
-import org.apache.dolphinscheduler.common.Constants;
-import org.apache.dolphinscheduler.common.thread.ThreadLocalContext;
+import com.james.mpsb.common.Constants;
+import com.james.mpsb.common.thread.ThreadLocalContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

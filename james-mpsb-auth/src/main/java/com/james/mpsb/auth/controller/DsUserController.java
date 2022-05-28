@@ -2,7 +2,7 @@ package com.james.mpsb.auth.controller;
 
 
 import com.james.mpsb.auth.aspect.AccessLogAnnotation;
-import com.james.mpsb.auth.service.IDsUserService;
+import com.james.mpsb.auth.service.IUserService;
 import com.james.mpsb.common.controller.BaseController;
 import com.james.mpsb.common.entity.PageVo;
 import com.james.mpsb.common.entity.QueryCondition;
@@ -40,7 +40,7 @@ import static com.james.mpsb.common.enums.Status.USER_LOGIN_FAILURE;
 public class DsUserController extends BaseController {
 
     @Autowired
-    private IDsUserService userService;
+    private IUserService userService;
 
     /**
      * login

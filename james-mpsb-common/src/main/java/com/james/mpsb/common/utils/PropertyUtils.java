@@ -18,8 +18,8 @@
 package com.james.mpsb.common.utils;
 
 import org.apache.commons.lang.StringUtils;
-import org.apache.dolphinscheduler.common.Constants;
-import org.apache.dolphinscheduler.spi.enums.ResUploadType;
+import com.james.mpsb.common.Constants;
+import com.james.mpsb.common.enums.ResUploadType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,7 +30,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
-import static org.apache.dolphinscheduler.common.Constants.COMMON_PROPERTIES_PATH;
+import static com.james.mpsb.common.Constants.COMMON_PROPERTIES_PATH;
 
 public class PropertyUtils {
 
