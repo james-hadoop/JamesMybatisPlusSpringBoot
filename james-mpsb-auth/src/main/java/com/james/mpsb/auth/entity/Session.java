@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -37,7 +37,7 @@ public class Session implements Serializable {
     private String ip;
 
     @ApiModelProperty(value = "last login time")
-    private LocalDateTime lastLoginTime;
+    private Date lastLoginTime;
 
 
 }

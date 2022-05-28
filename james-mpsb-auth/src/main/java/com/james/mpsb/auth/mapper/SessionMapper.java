@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.james.mpsb.auth.entity.Session;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * <p>
  *  Mapper 接口
@@ -14,5 +16,10 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface SessionMapper extends BaseMapper<Session> {
+    Session queryByUserIdAndIp(int userId, String ip);
+
+    List<Session> queryByUserId(int userId);
+
 
 }
+

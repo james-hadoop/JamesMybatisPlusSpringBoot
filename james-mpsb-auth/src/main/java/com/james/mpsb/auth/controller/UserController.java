@@ -36,61 +36,61 @@ import static com.james.mpsb.common.enums.Status.USER_LOGIN_FAILURE;
  */
 @Api(tags = "用户列表")
 @RestController
-@RequestMapping("/auth/ds-user")
-public class DsUserController extends BaseController {
+@RequestMapping("/auth/user")
+public class UserController extends BaseController {
 
     @Autowired
     private IUserService userService;
 
-    /**
-     * login
-     *
-     * @param userName user name
-     * @param userPassword user password
-     * @param request request
-     * @param response response
-     * @return login result
-     */
-    @ApiOperation(value = "login", notes = "LOGIN_NOTES")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "userName", value = "USER_NAME", required = true, dataType = "String"),
-            @ApiImplicitParam(name = "userPassword", value = "USER_PASSWORD", required = true, dataType = "String")
-    })
-    @PostMapping(value = "/login")
-    @ApiException(USER_LOGIN_FAILURE)
-    @AccessLogAnnotation(ignoreRequestArgs = {"userPassword", "request", "response"})
-    public Resp<Map<String, String>> login(@RequestParam(value = "userName") String userName,
-                                           @RequestParam(value = "userPassword") String userPassword,
-                                           HttpServletRequest request,
-                                           HttpServletResponse response) {
-        //user name check
-        if (StringUtils.isEmpty(userName)) {
-            return Resp.fail(null);
-        }
-
-        // user ip check
-        String ip = getClientIpAddress(request);
-        if (StringUtils.isEmpty(ip)) {
-            return error(IP_IS_EMPTY.getCode(), IP_IS_EMPTY.getMsg());
-        }
-
-        // verify username and password
-        Result<Map<String, String>> result = authenticator.authenticate(userName, userPassword, ip);
-        if (result.getCode() != Status.SUCCESS.getCode()) {
-            return result;
-        }
-
-        response.setStatus(HttpStatus.SC_OK);
-        Map<String, String> cookieMap = result.getData();
-        for (Map.Entry<String, String> cookieEntry : cookieMap.entrySet()) {
-            Cookie cookie = new Cookie(cookieEntry.getKey(), cookieEntry.getValue());
-            cookie.setHttpOnly(true);
-            response.addCookie(cookie);
-        }
-
-
-        return Resp.ok(null);
-    }
+//    /**
+//     * login
+//     *
+//     * @param userName user name
+//     * @param userPassword user password
+//     * @param request request
+//     * @param response response
+//     * @return login result
+//     */
+//    @ApiOperation(value = "login", notes = "LOGIN_NOTES")
+//    @ApiImplicitParams({
+//            @ApiImplicitParam(name = "userName", value = "USER_NAME", required = true, dataType = "String"),
+//            @ApiImplicitParam(name = "userPassword", value = "USER_PASSWORD", required = true, dataType = "String")
+//    })
+//    @PostMapping(value = "/login")
+//    @ApiException(USER_LOGIN_FAILURE)
+//    @AccessLogAnnotation(ignoreRequestArgs = {"userPassword", "request", "response"})
+//    public Resp<Map<String, String>> login(@RequestParam(value = "userName") String userName,
+//                                           @RequestParam(value = "userPassword") String userPassword,
+//                                           HttpServletRequest request,
+//                                           HttpServletResponse response) {
+//        //user name check
+//        if (StringUtils.isEmpty(userName)) {
+//            return Resp.fail(null);
+//        }
+//
+//        // user ip check
+//        String ip = getClientIpAddress(request);
+//        if (StringUtils.isEmpty(ip)) {
+//            return error(IP_IS_EMPTY.getCode(), IP_IS_EMPTY.getMsg());
+//        }
+//
+//        // verify username and password
+//        Result<Map<String, String>> result = authenticator.authenticate(userName, userPassword, ip);
+//        if (result.getCode() != Status.SUCCESS.getCode()) {
+//            return result;
+//        }
+//
+//        response.setStatus(HttpStatus.SC_OK);
+//        Map<String, String> cookieMap = result.getData();
+//        for (Map.Entry<String, String> cookieEntry : cookieMap.entrySet()) {
+//            Cookie cookie = new Cookie(cookieEntry.getKey(), cookieEntry.getValue());
+//            cookie.setHttpOnly(true);
+//            response.addCookie(cookie);
+//        }
+//
+//
+//        return Resp.ok(null);
+//    }
 
 
     /**
@@ -98,7 +98,7 @@ public class DsUserController extends BaseController {
      */
     @ApiOperation("用户列表分页查询(排序)")
     @GetMapping("/list")
-    @PreAuthorize("hasAuthority('auth:ds-user:list')")
+    @PreAuthorize("hasAuthority('auth:user:list')")
     public Resp<PageVo> list(QueryCondition queryCondition) {
         PageVo page = userService.queryPage(queryCondition);
 
