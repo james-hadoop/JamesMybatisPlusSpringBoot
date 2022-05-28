@@ -21,3 +21,18 @@ VALUES ('1', 'admin', '7ad2410b2f4c074479a8937a28a22b8f', '0', 'xxx@qq.com', '',
 
 select * from t_ds_user;
 
+
+DROP TABLE IF EXISTS `t_ds_session`;
+CREATE TABLE `t_ds_session` (
+                                `id` varchar(64) NOT NULL COMMENT 'key',
+                                `user_id` int(11) DEFAULT NULL COMMENT 'user id',
+                                `ip` varchar(45) DEFAULT NULL COMMENT 'ip',
+                                `last_login_time` datetime DEFAULT NULL COMMENT 'last login time',
+                                PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_ds_session
+-- ----------------------------
+
+

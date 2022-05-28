@@ -1,6 +1,6 @@
 package com.james.mpsb.auth.mapper;
 
-import com.james.mpsb.auth.entity.DsUser;
+import com.james.mpsb.auth.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -13,6 +13,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @since 2022-05-27
  */
 @Mapper
-public interface DsUserMapper extends BaseMapper<DsUser> {
+public interface DsUserMapper extends BaseMapper<User> {
 
 }

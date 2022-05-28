@@ -1,0 +1,11 @@
+/home/james/workspace/JamesMybatisPlusSpringBoot/james-mpsb-auth/src/main/java/com/james/mpsb/auth/mapper/DsUserMapper.java
+/home/james/workspace/JamesMybatisPlusSpringBoot/james-mpsb-auth/src/main/java/com/james/mpsb/auth/aspect/AccessLogAnnotation.java
+/home/james/workspace/JamesMybatisPlusSpringBoot/james-mpsb-auth/src/main/java/com/james/mpsb/auth/controller/DsUserController.java
+/home/james/workspace/JamesMybatisPlusSpringBoot/james-mpsb-auth/src/main/java/com/james/mpsb/auth/service/impl/DsUserServiceImpl.java
+/home/james/workspace/JamesMybatisPlusSpringBoot/james-mpsb-auth/src/main/java/com/james/mpsb/auth/AuthApplication.java
+/home/james/workspace/JamesMybatisPlusSpringBoot/james-mpsb-auth/src/main/java/com/james/mpsb/auth/config/SecurityConfig.java
+/home/james/workspace/JamesMybatisPlusSpringBoot/james-mpsb-auth/src/main/java/com/james/mpsb/auth/service/IDsUserService.java
+/home/james/workspace/JamesMybatisPlusSpringBoot/james-mpsb-auth/src/main/java/com/james/mpsb/auth/entity/DsUser.java
+/home/james/workspace/JamesMybatisPlusSpringBoot/james-mpsb-auth/src/main/java/com/james/mpsb/auth/config/DataSourceConfig.java
+/home/james/workspace/JamesMybatisPlusSpringBoot/james-mpsb-auth/src/main/java/com/james/mpsb/auth/aspect/AccessLogAspect.java
+/home/james/workspace/JamesMybatisPlusSpringBoot/james-mpsb-auth/src/main/java/com/james/mpsb/auth/config/MybatisPlusConfig.java

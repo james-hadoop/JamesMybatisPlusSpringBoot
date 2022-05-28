@@ -3,7 +3,7 @@
 <mapper namespace="com.james.mpsb.auth.mapper.DsUserMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.james.mpsb.auth.entity.DsUser">
+    <resultMap id="BaseResultMap" type="com.james.mpsb.auth.entity.User">
         <id column="id" property="id" />
         <result column="user_name" property="userName" />
         <result column="user_password" property="userPassword" />

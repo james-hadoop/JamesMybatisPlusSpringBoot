@@ -99,11 +99,11 @@ public class PlusGenerator {
         //生成 @RestController 控制器
         strategy.setRestControllerStyle(true);
         //需要包含的表名，允许正则表达式
-        strategy.setInclude("t_ds_user");
+        strategy.setInclude("t_ds_session");
         //驼峰转连字符
         strategy.setControllerMappingHyphenStyle(true);
         //表前缀
-        strategy.setTablePrefix("t_");
+        strategy.setTablePrefix("t_ds_");
         mpg.setStrategy(strategy);
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();

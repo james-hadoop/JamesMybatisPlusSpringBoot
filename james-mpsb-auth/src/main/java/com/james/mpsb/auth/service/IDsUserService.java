@@ -1,6 +1,6 @@
 package com.james.mpsb.auth.service;
 
-import com.james.mpsb.auth.entity.DsUser;
+import com.james.mpsb.auth.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.james.mpsb.common.entity.PageVo;
 import com.james.mpsb.common.entity.QueryCondition;
@@ -13,6 +13,6 @@ import com.james.mpsb.common.entity.QueryCondition;
  * @author james
  * @since 2022-05-27
  */
-public interface IDsUserService extends IService<DsUser> {
+public interface IDsUserService extends IService<User> {
     PageVo queryPage(QueryCondition params);
 }

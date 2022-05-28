@@ -24,7 +24,7 @@
     <dependency>
       <groupId>com.james.mpsb</groupId>
       <artifactId>james-mpsb-common</artifactId>
-      <version>1.0</version>
+      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
