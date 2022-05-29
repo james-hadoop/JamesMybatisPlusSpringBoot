@@ -93,6 +93,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
      */
     @Override
     public User queryUser(String name, String password) {
+
+
+
         String md5 = EncryptionUtils.getMd5(password);
         return userMapper.queryUserByNamePassword(name, md5);
     }

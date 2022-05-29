@@ -37,4 +37,21 @@ public class EncryptionUtils {
         return DigestUtils.md5Hex(null == rawStr ? StringUtils.EMPTY : rawStr);
     }
 
+    private static String createUser(String username, String passwd) {
+        if (StringUtils.isEmpty(username) || StringUtils.isEmpty(passwd)) {
+            return StringUtils.EMPTY;
+        }
+
+        String encryptedPasswd = getMd5(passwd);
+
+        String ret = String.format("user = %s, pass=%s", username,
+                encryptedPasswd);
+
+        return ret;
+    }
+
+    public static void main(String[] args) {
+        String ret = createUser("james", "james");
+        System.out.println(ret);
+    }
 }

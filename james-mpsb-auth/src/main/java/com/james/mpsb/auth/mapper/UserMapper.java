@@ -34,6 +34,7 @@ public interface UserMapper extends BaseMapper<User> {
 
     /**
      * query user by userName and password
+     * used by PasswordAuthenticator
      *
      * @param userName userName
      * @param password password

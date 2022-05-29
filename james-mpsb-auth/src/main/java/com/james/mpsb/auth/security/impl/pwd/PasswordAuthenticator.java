@@ -22,7 +22,10 @@ import com.james.mpsb.auth.entity.User;
 import com.james.mpsb.auth.security.impl.AbstractAuthenticator;
 import com.james.mpsb.auth.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+@Component("passwordAuthenticator")
 public class PasswordAuthenticator extends AbstractAuthenticator {
     @Autowired
     private IUserService userService;
