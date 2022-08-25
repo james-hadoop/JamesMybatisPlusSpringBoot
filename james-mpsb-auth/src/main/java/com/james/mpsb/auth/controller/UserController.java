@@ -29,12 +29,12 @@ import java.util.Map;
 import static com.james.mpsb.common.enums.Status.USER_LOGIN_FAILURE;
 
 /**
- * 用户列表
+ * users controller
  *
  * @author james
  * @since 2022-05-27
  */
-@Api(tags = "用户列表")
+@Api(tags = "USERS_TAG")
 @RestController
 @RequestMapping("/auth/user")
 public class UserController extends BaseController {

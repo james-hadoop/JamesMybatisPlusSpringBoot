@@ -23,7 +23,10 @@ import static com.james.mpsb.common.enums.Status.*;
 
 
 /**
- * access token controller
+ * 获取令牌
+ *
+ * @author james
+ * @since 2022-05-27
  */
 @Api(tags = "ACCESS_TOKEN_TAG")
 @RestController
