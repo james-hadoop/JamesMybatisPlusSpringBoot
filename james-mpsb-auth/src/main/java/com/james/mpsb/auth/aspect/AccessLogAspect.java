@@ -53,7 +53,7 @@ public class AccessLogAspect {
 
     private static final Pattern sensitiveDataPattern = Pattern.compile(sensitiveDataRegEx, Pattern.CASE_INSENSITIVE);
 
-    @Pointcut("@annotation(org.apache.dolphinscheduler.api.aspect.AccessLogAnnotation)")
+    @Pointcut("@annotation(com.james.mpsb.auth.aspect.AccessLogAnnotation)")
     public void logPointCut(){
         // Do nothing because of it's a pointcut
     }
