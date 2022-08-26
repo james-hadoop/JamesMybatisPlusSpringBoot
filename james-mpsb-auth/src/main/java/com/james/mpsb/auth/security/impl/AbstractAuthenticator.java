@@ -17,12 +17,12 @@
 
 package com.james.mpsb.auth.security.impl;
 
-import com.james.mpsb.auth.entity.Session;
-import com.james.mpsb.auth.entity.User;
+import com.james.mpsb.auth.dao.po.Session;
+import com.james.mpsb.auth.dao.po.User;
 import com.james.mpsb.auth.enums.Flag;
 import com.james.mpsb.auth.security.Authenticator;
-import com.james.mpsb.auth.service.ISessionService;
-import com.james.mpsb.auth.service.IUserService;
+import com.james.mpsb.auth.service.SessionService;
+import com.james.mpsb.auth.service.UsersService;
 import com.james.mpsb.common.Constants;
 import com.james.mpsb.common.entity.Result;
 import com.james.mpsb.common.enums.Status;
@@ -38,9 +38,9 @@ public abstract class AbstractAuthenticator implements Authenticator {
     private static final Logger logger = LoggerFactory.getLogger(AbstractAuthenticator.class);
 
     @Autowired
-    private IUserService userService;
+    private UsersService userService;
     @Autowired
-    private ISessionService sessionService;
+    private SessionService sessionService;
 
     /**
      * user login and return user in db

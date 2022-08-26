@@ -2,12 +2,12 @@ package com.james.mpsb.auth.service.impl;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.james.mpsb.auth.entity.AccessToken;
-import com.james.mpsb.auth.entity.User;
+import com.james.mpsb.auth.dao.po.AccessToken;
+import com.james.mpsb.auth.dao.po.User;
 import com.james.mpsb.auth.enums.UserType;
-import com.james.mpsb.auth.mapper.AccessTokenMapper;
+import com.james.mpsb.auth.dao.mapper.AccessTokenMapper;
 import com.james.mpsb.auth.service.AccessTokenService;
-import com.james.mpsb.auth.utils.PageInfo;
+import com.james.mpsb.common.utils.PageInfo;
 import com.james.mpsb.common.Constants;
 import com.james.mpsb.common.entity.Result;
 import com.james.mpsb.common.enums.Status;

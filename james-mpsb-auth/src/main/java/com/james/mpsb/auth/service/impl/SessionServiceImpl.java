@@ -17,10 +17,10 @@
 
 package com.james.mpsb.auth.service.impl;
 
-import com.james.mpsb.auth.entity.Session;
-import com.james.mpsb.auth.entity.User;
-import com.james.mpsb.auth.mapper.SessionMapper;
-import com.james.mpsb.auth.service.ISessionService;
+import com.james.mpsb.auth.dao.po.Session;
+import com.james.mpsb.auth.dao.po.User;
+import com.james.mpsb.auth.dao.mapper.SessionMapper;
+import com.james.mpsb.auth.service.SessionService;
 import com.james.mpsb.common.Constants;
 import com.james.mpsb.common.controller.BaseController;
 import org.apache.commons.collections.CollectionUtils;
@@ -42,13 +42,19 @@ import java.util.UUID;
  * session service implement
  */
 @Service("sessionService")
-public class SessionServiceImpl extends BaseServiceImpl implements ISessionService {
+public class SessionServiceImpl extends BaseServiceImpl implements SessionService {
 
-    private static final Logger logger = LoggerFactory.getLogger(ISessionService.class);
+    private static final Logger logger = LoggerFactory.getLogger(SessionService.class);
 
     @Autowired
     private SessionMapper sessionMapper;
 
+    // TODO
+    /**
+     * create by james on 2022-07-04.
+     *
+     * 通过 Session 认证
+     */
     /**
      * get user session from request
      *
@@ -85,7 +91,7 @@ public class SessionServiceImpl extends BaseServiceImpl implements ISessionServi
      * @return session string
      */
     @Override
-    @Transactional(rollbackFor = RuntimeException.class)
+    @Transactional
     public String createSession(User user, String ip) {
         Session session = null;
 

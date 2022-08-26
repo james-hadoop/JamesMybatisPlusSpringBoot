@@ -18,14 +18,14 @@
 package com.james.mpsb.auth.security.impl.ldap;
 
 
-import com.james.mpsb.auth.entity.User;
+import com.james.mpsb.auth.dao.po.User;
 import com.james.mpsb.auth.security.impl.AbstractAuthenticator;
-import com.james.mpsb.auth.service.IUserService;
+import com.james.mpsb.auth.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class LdapAuthenticator extends AbstractAuthenticator {
     @Autowired
-    private IUserService usersService;
+    private UsersService usersService;
     @Autowired
     LdapService ldapService;
 

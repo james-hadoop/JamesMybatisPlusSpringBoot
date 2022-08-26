@@ -17,7 +17,7 @@
 
 package com.james.mpsb.auth.aspect;
 
-import com.james.mpsb.auth.entity.User;
+import com.james.mpsb.auth.dao.po.User;
 import org.apache.commons.lang.StringUtils;
 import com.james.mpsb.common.Constants;
 import org.aspectj.lang.ProceedingJoinPoint;

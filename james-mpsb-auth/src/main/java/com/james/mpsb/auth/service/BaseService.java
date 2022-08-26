@@ -17,7 +17,7 @@
 
 package com.james.mpsb.auth.service;
 
-import com.james.mpsb.auth.entity.User;
+import com.james.mpsb.auth.dao.po.User;
 import com.james.mpsb.common.entity.Result;
 import com.james.mpsb.common.enums.Status;
 

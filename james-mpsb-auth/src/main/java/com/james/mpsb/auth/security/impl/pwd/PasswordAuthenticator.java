@@ -18,17 +18,16 @@
 package com.james.mpsb.auth.security.impl.pwd;
 
 
-import com.james.mpsb.auth.entity.User;
+import com.james.mpsb.auth.dao.po.User;
 import com.james.mpsb.auth.security.impl.AbstractAuthenticator;
-import com.james.mpsb.auth.service.IUserService;
+import com.james.mpsb.auth.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 @Component("passwordAuthenticator")
 public class PasswordAuthenticator extends AbstractAuthenticator {
     @Autowired
-    private IUserService userService;
+    private UsersService userService;
 
     @Override
     public User login(String userId, String password, String extra) {

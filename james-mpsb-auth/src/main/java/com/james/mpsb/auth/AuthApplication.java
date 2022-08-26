@@ -12,7 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @EnableFeignClients
 @EnableSwagger2
-@MapperScan("com.james.mpsb.auth.mapper")
+@MapperScan("com/james/mpsb/auth/dao/mapper")
 public class AuthApplication {
     public static void main(String[] args) {
         SpringApplication.run(AuthApplication.class, args);

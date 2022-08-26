@@ -1,7 +1,7 @@
 package com.james.mpsb.auth.controller;
 
 import com.james.mpsb.auth.aspect.AccessLogAnnotation;
-import com.james.mpsb.auth.entity.User;
+import com.james.mpsb.auth.dao.po.User;
 import com.james.mpsb.auth.service.AccessTokenService;
 import com.james.mpsb.common.Constants;
 import com.james.mpsb.common.controller.BaseController;
